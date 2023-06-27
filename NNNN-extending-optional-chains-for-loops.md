@@ -168,6 +168,6 @@ This is the proposed solution from the rejected proposal [SE-0231](https://githu
 
 ## Acknowledgments
 
-The title “Extending optional chains to include for loops” was taken from the [rejection of proposal SE-0231](https://forums.swift.org/t/rejected-se-0231-optional-iteration/17805).
+The title “Extending optional chains to include for loops” is taken from the [rejection of proposal SE-0231](https://forums.swift.org/t/rejected-se-0231-optional-iteration/17805).
 
 The discussion in the aforementioned [forums topic](https://forums.swift.org/t/still-or-again-interest-in-optional-iteration/65730) was very helpful.
