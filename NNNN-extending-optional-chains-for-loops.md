@@ -21,7 +21,7 @@ The solution in this proposal follows this alternative solution, which is kind o
 
 Some arguments for and against this solution have already been discussed in a [forums topic](https://forums.swift.org/t/still-or-again-interest-in-optional-iteration/65730).
 
-This proposal draft has been presented in [this forums topic](https://forums.swift.org/t/XXX).
+This proposal draft has been presented in [this forums topic](https://forums.swift.org/t/pitch-extending-optional-chains-to-include-for-loops/65848).
 
 ## Motivation
 
