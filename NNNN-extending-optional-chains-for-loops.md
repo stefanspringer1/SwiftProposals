@@ -164,7 +164,7 @@ Even if no “logical” arguments could be found against this option, such a so
 
 ### Alternative 4: Use `for?`
 
-This is the proposed solution from the rejected propoasal [SE-0231](https://github.com/apple/swift-evolution/blob/main/proposals/0231-optional-iteration.md) and is only listed here for completeness.
+This is the proposed solution from the rejected proposal [SE-0231](https://github.com/apple/swift-evolution/blob/main/proposals/0231-optional-iteration.md) and is only listed here for completeness.
 
 ## Acknowledgments
 
