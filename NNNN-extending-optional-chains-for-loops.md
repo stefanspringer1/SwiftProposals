@@ -19,9 +19,7 @@ For-in loops only work with non-optional sequences. An optional sequence is not 
 
 The solution in this proposal follows this alternative solution, which is kind of a more general solution in comparison to the rejected one, allowing the same sequence term (which could contain a trailing question mark) as could be written in front of the dot of a method call. This means that when switching between the for-in loop and an application of `forEach`, this term would not have to be changed. While motivations described in the old, rejected proposal might still be valid, we try a fresh take in the motivation section below, as the proposed solution differs from the rejected one.
 
-Some arguments for and against this solution have already been discussed in a [forums topic](https://forums.swift.org/t/still-or-again-interest-in-optional-iteration/65730).
-
-This proposal draft has been presented in [this forums topic](https://forums.swift.org/t/pitch-extending-optional-chains-to-include-for-loops/65848).
+This proposal draft has been presented in [this forums topic](https://forums.swift.org/t/pitch-extending-optional-chains-to-include-for-loops/65848). Before, some arguments for and against this solution have already been discussed in [another forums topic](https://forums.swift.org/t/still-or-again-interest-in-optional-iteration/65730).
 
 ## Motivation
 
