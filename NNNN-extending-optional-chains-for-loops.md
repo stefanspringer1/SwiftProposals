@@ -47,6 +47,8 @@ if let firstStatus = myElement.children("status").first {
 
 From this code is is less clear from a first quick view which the elements are that we iterate through.
 
+Note that there might be even more complex use cases, where the lack of the proposed solution leads to even more nested `if let`  and for-in loops.
+
 ## Proposed solution
 
 The proposed solution is that when writing a for-in loop:
