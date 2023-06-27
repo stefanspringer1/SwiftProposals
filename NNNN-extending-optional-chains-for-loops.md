@@ -93,7 +93,7 @@ As for the possible “ugliness” of optional chaining, one could point out tha
 
 As for the “non-obvious way” of introducing non-optional sequences, this might be true to some degree, but the proposed solution is still quite explicit in comparison to allowing optional sequences in for-in loops without making this explicit (see alternative 3 below).
 
-### Objection to the trailing question mark in a isolated term
+### Objection to the trailing question mark in an isolated term
 
 This proposal would bring more “isolated” terms with a trailing question mark (i.e. the question mark is is not followed by a method or index application) which are quite unsual in Swift and might even be considered as anti-pattern. E.g. the following is valid Swift code, but a kind of an unusual one, and people might object of better not using it:
 
