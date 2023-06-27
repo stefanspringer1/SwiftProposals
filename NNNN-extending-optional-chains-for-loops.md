@@ -47,7 +47,7 @@ From this code is is less clear from a first quick view which the elements are t
 
 Note that there might be even more complex use cases, where the lack of the proposed solution would lead to even more nested `if let`  and for-in loops.
 
-(One might argue that optional chaining is not necessary here, because you _can_ use the according `if let` expressions — but note that the same argument could be used against optional chaining at other places.)
+One might argue that optional chaining is not necessary here, because you _can_ use the according `if let` expressions — but note that the same argument could be used against optional chaining at other places. So even if one does not see a big improvement for for-in loops, the streamlining of the Swift language could be an argument in favour of the proposed language change.
 
 From the rejected proposal [SE-0231](https://github.com/apple/swift-evolution/blob/main/proposals/0231-optional-iteration.md):
 
