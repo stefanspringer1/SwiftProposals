@@ -47,6 +47,8 @@ From this code is is less clear from a first quick view which the elements are t
 
 Note that there might be even more complex use cases, where the lack of the proposed solution would lead to even more nested `if let`  and for-in loops.
 
+(One might argue that optional chaining is not necessary here, because you _can_ use the according `if let` expressions — but note that could be used as an argument against optional chaining at other places, too.)
+
 From the rejected proposal [SE-0231](https://github.com/apple/swift-evolution/blob/main/proposals/0231-optional-iteration.md):
 
 >While usage of optional sequences is often treated as misconception, there are several common ways one could end up with an optional sequence through Standard Library APIs and language constructs themselves. Amongst the most prevalent are optional chaining and dictionary getters. An indentation-sensitive area of which optional arrays are an integral part is decoding and deserialization, i.e parsing a JSON response. Swift currently doesn't offer a mechanism for expressing optional iteration directly: optional sequences are illegal as a for-in loop argument. For a safe option, developers often resort to optional binding, which requires additional nesting ...
