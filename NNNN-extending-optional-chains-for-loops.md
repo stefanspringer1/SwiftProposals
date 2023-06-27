@@ -75,7 +75,7 @@ As part of the solution that we propose, the following code in the above example
 for element in myElement.children("status").first?.children { … }
 ```
 
-As already explained in the motivation section, this code is cleaner than the current possible alternative when using a for-in loop: it is more easily understandable what the things are that we want to iterate through.
+As already explained in the motivation section, this code is cleaner than the one that ensures a non-optional sequence by adding an `if let` statement: it is more easily understandable what the things are that we want to iterate through.
 
 ### Objections from the rejection of proposal SE-0231
 
