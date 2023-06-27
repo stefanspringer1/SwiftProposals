@@ -43,7 +43,7 @@ if let firstStatus = myElement.children("status").first {
 }
 ```
 
-From this code is is less clear from a first quick view which the elements are that we iterate through.
+From this code is is less clear from a first quick view which the elements are that we iterate through. This proposal would make the other, simpler looking code valid.
 
 Note that there might be even more complex use cases, where the lack of the proposed solution would lead to even more nested `if let`  and for-in loops.
 
