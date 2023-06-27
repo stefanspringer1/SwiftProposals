@@ -17,7 +17,7 @@
 
 For-in loops only work with non-optional sequences. An optional sequence is not allowed as the sequence expression of a for-in loop. It may be convenient – as also being discussed in the rejected proposal [SE-0231](https://github.com/apple/swift-evolution/blob/main/proposals/0231-optional-iteration.md) – to allow optional sequences in for-in loops, maybe being annotated with an appropriate question mark signaling that an optional sequence is used at this point. The solution in the proposal SE-0231 was using `for?` in the case of an optional sequences and that specific solution [has been rejected](https://forums.swift.org/t/rejected-se-0231-optional-iteration/17805), but while doing so an alternative solution has been mentioned.
 
-The solution in this proposal follows this alternative solution, which is kind of a more general solution in comporison to the rejected one, allowing the same sequence term (which could contain a trailing question mark) as could be written in front of the dot of a method call. This means that when switching between the for-in loop and an application of `forEach`, this term would not have to be changed. While motivations described in the old, rejected proposal might still be valid, we try a fresh take in the motivation section below, as the proposed solution differs from the rejected one.
+The solution in this proposal follows this alternative solution, which is kind of a more general solution in comparison to the rejected one, allowing the same sequence term (which could contain a trailing question mark) as could be written in front of the dot of a method call. This means that when switching between the for-in loop and an application of `forEach`, this term would not have to be changed. While motivations described in the old, rejected proposal might still be valid, we try a fresh take in the motivation section below, as the proposed solution differs from the rejected one.
 
 Some arguments for and against this solution have already been discussed in a [forums topic](https://forums.swift.org/t/still-or-again-interest-in-optional-iteration/65730), which first posted the question about optional iteration in a more general form.
 
@@ -101,7 +101,7 @@ One might argue that in the case of a for-in loop:
 for item in myOptionalSequence? { … }
 ```
 
-the question mark could be read as a simple reminder that the sequence might be empty and that people will get used to it.
+the question mark could be read as a simple reminder that the sequence might be empty and that people will get used to this notation.
 
 ## Detailed design
 
@@ -134,7 +134,7 @@ This has already been discussed above.
 
 ### Alternative 2: Using empty sequences as a fallback
 
-This ia another option without any change to the Swift language:
+This is another option without any change to the Swift language:
 
 Use the following code instead:
 
