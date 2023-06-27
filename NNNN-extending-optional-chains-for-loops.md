@@ -23,7 +23,7 @@ This proposal draft has been presented in [this forums topic](https://forums.swi
 
 ## Motivation
 
-In the following code, we want to iterate through the children of the first child with name "status" of an XML element (using [this library](https://github.com/stefanspringer1/SwiftXML), but the example should be very clear and also easily generalizable):
+In the following code, we want to iterate through the children of the first child with name “status” of an XML element (using [this library](https://github.com/stefanspringer1/SwiftXML), but the example should be very clear and also easily generalizable):
 
 ```Swift
 myElement.children("status").first?.children.forEach { element in … }
@@ -47,7 +47,7 @@ From this code is is less clear from a first quick view which the elements are t
 
 Note that there might be even more complex use cases, where the lack of the proposed solution would lead to even more nested `if let`  and for-in loops.
 
-One might argue that optional chaining is not necessary here, because you _can_ use the according `if let` expressions — but note that the same argument could be used against optional chaining at some other places. So even if one does not see a big improvement for for-in loops, making the language feel more consistent (“We have this great feature of optional chaining, but why can’t I use it at this place?”) could be an argument in favour of the proposed language change.
+One might argue that optional chaining is not necessary here, because you _can_ use the according `if let` expressions — but note that the same argument could be used against optional chaining at some other places. So even if one does not see a big improvement for for-in loops, making the language feel more consistent (“We have this great feature of optional chaining, but why can’t I use it at this place?”) could be an argument in favour of the proposed language change. So it could be seen less as new language feature _per se_ but as part of a “streamlining” of the language.
 
 From the rejected proposal [SE-0231](https://github.com/apple/swift-evolution/blob/main/proposals/0231-optional-iteration.md):
 
