@@ -83,7 +83,7 @@ then the allowed `<sequence term>`  would be the same as in the case of the meth
 <sequence term>.forEach { … }
 ```
 
-(Note that such a `<sequence term>` could include a trailing question mark.)
+Such a `<sequence term>` could include a trailing question mark.
 
 As part of the solution that we propose, the following code in the above example would be valid:
 
