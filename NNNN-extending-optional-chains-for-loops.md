@@ -1,17 +1,17 @@
 # Extending optional chains to include for loops
 
 * Proposal: [SE-NNNN](NNNN-filename.md)
-* Authors: [Author 1](https://github.com/swiftdev), [Author 2](https://github.com/swiftdev)
+* Authors: [Stefan Springer](https://github.com/stefanspringer1/), [Author 2](https://github.com/swiftdev)
 * Review Manager: TBD
 * Status: **Awaiting implementation**
 
 *During the review process, add the following fields as needed:*
 
 * Implementation: [apple/swift#NNNNN](https://github.com/apple/swift/pull/NNNNN) or [apple/swift-evolution-staging#NNNNN](https://github.com/apple/swift-evolution-staging/pull/NNNNN)
-* Decision Notes: [Rationale](https://forums.swift.org/), [Additional Commentary](https://forums.swift.org/)
-* Bugs: [SR-NNNN](https://bugs.swift.org/browse/SR-NNNN), [SR-MMMM](https://bugs.swift.org/browse/SR-MMMM)
+* Decision Notes: [Rationale](https://forums.swift.org/) (TODO), [Additional Commentary](https://forums.swift.org/) (TODO)
+* Bugs: –
 * Previous Revision: [1](https://github.com/apple/swift-evolution/blob/...commit-ID.../proposals/NNNN-filename.md)
-* Previous Proposal: [SE-XXXX](XXXX-filename.md)
+* Previous Proposal: [SE-0231](https://github.com/apple/swift-evolution/blob/main/proposals/0231-optional-iteration.md)
 
 ## Introduction
 
