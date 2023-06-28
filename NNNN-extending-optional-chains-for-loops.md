@@ -184,7 +184,7 @@ for element in myElement.children("status").first?.children.sequence {  }
 
 The new `sequence` property (one might want to choose a different name) of an optional sequence would give you the unwrapped sequence if the sequence exists, and else an approporiate empty sequence.
 
-We think that this does not feel as a natural expression of you intent, and it dispenses with the described symmetry between the for-in loop and `forEach` which we believe is a good thing. It is also not easy to discover as a feature; such an argument of discoverability [was part of the rejection of the `for?` solution](https://forums.swift.org/t/rejected-se-0231-optional-iteration/17805).
+We think that this does not feel as a natural expression of you intent (it feels like getting a sequence from a sequence, compare it when using it before `forEach`), and it dispenses with the described symmetry between the for-in loop and `forEach` which we believe is a good thing. It is also not easy to discover as a feature; such an argument of discoverability [was part of the rejection of the `for?` solution](https://forums.swift.org/t/rejected-se-0231-optional-iteration/17805).
 
 An argument in favour of this alternative could be that the language itself would not have to be changed, but only the according library. But this is still a change in the Swift distribution – we think that adding an according extension in your own library is not a good solution, because this way you stray from the usual path of how for-in loops are used.
 
