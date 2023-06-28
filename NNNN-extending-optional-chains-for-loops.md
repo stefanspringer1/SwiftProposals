@@ -150,7 +150,7 @@ An existing API will not change.
 
 ## Alternatives considered
 
-The following alternatives have been considered. The first three alternatives use features of the current Swift language and do not demand any change to the language.
+The following alternatives have been considered. The first three alternatives use features of the current Swift language and do not demand any change to the language or its standard libraries.
 
 ### Alternative 1: Use `if let` to ensure a non-optional sequence
 
