@@ -47,7 +47,7 @@ From this code is is less clear from a first quick view which the elements are t
 
 Note that there might be even more complex use cases, where the lack of the proposed solution would lead to even more nested `if let` and for-in loops. (The use case of complex XML querying and manipulation is a good example, as it demands concise formulations in order for the code to be still easily understandable.)
 
-One might argue that optional chaining is not necessary here, because you _can_ use the according `if let` expressions — but note that the same argument could be used against optional chaining at some other places. So even if one does not see a big improvement for for-in loops, making the language feel more consistent (“We have this great feature of optional chaining, but why can’t I use it at this place?”) could be an argument in favour of the proposed language change. So it could be seen less as new language feature _per se_ but as part of a “streamlining” of the language.
+One might argue that optional chaining is not necessary here, because you _can_ use the according `if let` expressions — but note that the same argument could be used against optional chaining at some other places. So even if one does not see a big improvement for for-in loops, making the language feel more consistent (“We have this great feature of optional chaining, but why can’t I use it at this place?”) could be an argument in favour of the proposed language change (also see the discussion of alternative 2 below). So it could be seen less as new language feature _per se_ but as part of a “streamlining” of the language.
 
 From the rejected proposal [SE-0231](https://github.com/apple/swift-evolution/blob/main/proposals/0231-optional-iteration.md):
 
