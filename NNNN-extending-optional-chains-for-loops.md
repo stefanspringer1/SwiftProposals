@@ -127,6 +127,12 @@ for item in myOptionalSequence? { … }
 
 the question mark could be read as a simple reminder that the sequence might be empty and that people will get used to this notation.
 
+### Objection to the `?` as not having enough visual weight 
+
+When you think that for-in loops over optional sequences is something that you really want to avoid, even a trailing `?` might not have enough visual weight to signal the use of an optional sequence.
+
+We think that `?` for optional chaining is the established sign, and that we would need more arguments why this optionality is “more dangerous” in the case of a for-in loop than in other cases of optional chaining to see a problem with the proposed solution.
+
 ## Detailed design
 
 TODO: _Describe the design of the solution in detail. If it involves new
