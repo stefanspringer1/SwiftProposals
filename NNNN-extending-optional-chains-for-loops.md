@@ -109,7 +109,7 @@ The following objections are from the [rejection of proposal SE-0231](https://fo
 
 As for the possible “ugliness” of optional chaining, one could point out that no more ugliness is being introduced than existed before, so to speak – but see the objection in the following section. Note that the mentioned proposal [SE-0230](https://github.com/apple/swift-evolution/blob/main/proposals/0230-flatten-optional-try.md) has already been implemented for Swift 5.
 
-As for the “non-obvious way” of introducing non-optional sequences, this might be true to some degree, but not more than in some other cases of optional chaining, and the proposed solution is still quite explicit in comparison to allowing optional sequences in for-in loops without making this explicit (see alternative 5 below).
+As for the “non-obvious way” of introducing non-optional sequences, this might be true to some degree, but not more than in some other cases of optional chaining, and the proposed solution is still quite explicit in comparison to allowing optional sequences in for-in loops without making this explicit (see alternative 5 below). But one might argue that having an optional chain without explicitly unwrapping the optional e.g. via `if let`  is a more non-obvious way and that in this case even a trailing `?` might not have enough visual weight to signal the use of an optional sequence.
 
 ### Objection to the trailing question mark in an isolated term
 
@@ -126,12 +126,6 @@ for item in myOptionalSequence? { … }
 ```
 
 the question mark could be read as a simple reminder that the sequence might be empty and that people will get used to this notation.
-
-### Objection to the `?` as not having enough visual weight 
-
-When you think that for-in loops over optional sequences is something that you really want to avoid, even a trailing `?` might not have enough visual weight to signal the use of an optional sequence.
-
-We think that `?` for optional chaining is the established sign, and that we would need more arguments why this optionality is “more dangerous” in the case of a for-in loop than in other cases of optional chaining to see a problem with the proposed solution.
 
 ## Detailed design
 
