@@ -174,7 +174,21 @@ where `EmptyElementSequence()` is an appropriate empty sequence.
 
 This would have the drawback of having to introduce a sequence (the empty sequence) that we actually are not interested in, when all we want is that nothing happens if the optional sequence is `nil`.
 
-### Alternative 4: Allowing optional sequences in for-in loops without making it explicit
+### Alternative 4: Add a property of the optional sequence to ensure the usage of a non-optional sequence
+
+This is a variation of alternative 3:
+
+```Swift
+for element in myElement.children("status").first?.children.sequence {  }
+```
+
+The new `sequence` property of an optional sequence would give you the unwrapped sequence if the sequence exists, and else an approporiate empty sequence.
+
+We think that this does not feel as a natural expression of you intent, and it dispenses with the described symmetry between the for-in loop and `forEach` which we believe is a good thing.
+
+An argument in favour of this alternative could be that the language itself would not have to be changed, but only the according library. But this is still a change in the Swift distribution – we think that adding an according extension in your own library is not a good solution, because this way you stray from the usual path of how for-in loops are used.
+
+### Alternative 5: Allowing optional sequences in for-in loops without making it explicit
 
 For any optional sequence `mySequence` one could allow:
 
@@ -184,7 +198,7 @@ for item in mySequence { … }
 
 Even if no “logical” arguments could be found against this option, such a solution would be at least controversial (see e.g. [this comment](https://forums.swift.org/t/still-or-again-interest-in-optional-iteration/65730/5)). The argument against it is that one would like to see if the sequence in the for-in loop is optional or not. With the solution in this proposal, one could always recognize the optionality of the sequence.
 
-### Alternative 5: Use `for?`
+### Alternative 6: Use `for?`
 
 This is the proposed solution from the rejected proposal [SE-0231](https://github.com/apple/swift-evolution/blob/main/proposals/0231-optional-iteration.md) and is only listed here for completeness (cf. [the rejection](https://forums.swift.org/t/rejected-se-0231-optional-iteration/17805)).
 
