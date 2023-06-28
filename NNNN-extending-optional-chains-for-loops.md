@@ -17,10 +17,14 @@
 
 For-in loops only work with non-optional sequences. An optional sequence is not allowed as the sequence expression of a for-in loop. It may be convenient – as also being discussed in the rejected proposal [SE-0231](https://github.com/apple/swift-evolution/blob/main/proposals/0231-optional-iteration.md) – to allow optional sequences in for-in loops, maybe being annotated with an appropriate question mark signaling that an optional sequence is used at this point. The solution in the proposal SE-0231 was using `for?` in the case of an optional sequences and that specific solution [has been rejected](https://forums.swift.org/t/rejected-se-0231-optional-iteration/17805), but while doing so an alternative solution has been mentioned. _(Just to be sure that there is no misunderstanding for the reader at this point: The `for?` formulation is not (!) part of this proposal.)_
 
-The solution in this proposal follows the alternative solution, allowing the same sequence term (which could contain a trailing question mark, see the section “Proposed solution” below for a definition) as could be written in front of the dot of a method call:
+The solution in this proposal follows the alternative solution, allowing the same sequence term (which could contain a trailing question mark, see the section “Proposed solution” below for a definition) as could be written in front of the dot of a method call. From the [rejection of SE-0231](https://forums.swift.org/t/rejected-se-0231-optional-iteration/17805):
 
 ```Swift
-for element in myElement.children("status").first?.children { … }
+let optionalSequence: [Int]?
+let optional: (sequence: [Int], otherStuff: Int)?
+
+for x in optionalSequence? { ... }
+for x in optional?.sequence { ... }
 ```
 
 This means that when switching between the for-in loop and an application of `forEach`, this term would not have to be changed. The optionality is always clear from a question mark in the sequence term. While motivations described in the old, rejected proposal might still be valid, we try a fresh take in the motivation section below, as the proposed solution differs from the rejected one.
