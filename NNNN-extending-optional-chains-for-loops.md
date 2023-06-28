@@ -91,7 +91,7 @@ The following objections are from the [rejection of proposal SE-0231](https://fo
 
 As for the possible “ugliness” of optional chaining, one could point out that no more ugliness is being introduced than existed before, so to speak – but see the objection in the following section. Note that the mentioned proposal [SE-0230](https://github.com/apple/swift-evolution/blob/main/proposals/0230-flatten-optional-try.md) has already been implemented for Swift 5.
 
-As for the “non-obvious way” of introducing non-optional sequences, this might be true to some degree, but the proposed solution is still quite explicit in comparison to allowing optional sequences in for-in loops without making this explicit (see alternative 4 below).
+As for the “non-obvious way” of introducing non-optional sequences, this might be true to some degree, but not more than in some other cases of optional chaining, and the proposed solution is still quite explicit in comparison to allowing optional sequences in for-in loops without making this explicit (see alternative 4 below).
 
 ### Objection to the trailing question mark in an isolated term
 
