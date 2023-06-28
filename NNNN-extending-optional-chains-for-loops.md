@@ -144,7 +144,7 @@ A for-in loop and `forEach` have different semantics, e.g. you might want to use
 
 ### Alternative 3: Using empty sequences as a fallback
 
-This is another option without any change to the Swift language:
+This is another option without any change to the Swift language.
 
 Use the following code instead:
 
