@@ -182,7 +182,7 @@ This is a variation of alternative 3:
 for element in myElement.children("status").first?.children.sequence {  }
 ```
 
-The new `sequence` property (you might want to choose a different name) of an optional sequence would give you the unwrapped sequence if the sequence exists, and else an approporiate empty sequence.
+The new `sequence` property (one might want to choose a different name) of an optional sequence would give you the unwrapped sequence if the sequence exists, and else an approporiate empty sequence.
 
 We think that this does not feel as a natural expression of you intent, and it dispenses with the described symmetry between the for-in loop and `forEach` which we believe is a good thing. It is also not easy to discover as a feature; such an argument of discoverability [was part of the rejection of the `for?` solution](https://forums.swift.org/t/rejected-se-0231-optional-iteration/17805).
 
