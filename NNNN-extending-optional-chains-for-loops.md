@@ -91,7 +91,7 @@ The following objections are from the [rejection of proposal SE-0231](https://fo
 
 As for the possible “ugliness” of optional chaining, one could point out that no more ugliness is being introduced than existed before, so to speak – but see the objection in the following section. Note that the mentioned proposal [SE-0230](https://github.com/apple/swift-evolution/blob/main/proposals/0230-flatten-optional-try.md) has already been implemented for Swift 5.
 
-As for the “non-obvious way” of introducing non-optional sequences, this might be true to some degree, but the proposed solution is still quite explicit in comparison to allowing optional sequences in for-in loops without making this explicit (see alternative 3 below).
+As for the “non-obvious way” of introducing non-optional sequences, this might be true to some degree, but the proposed solution is still quite explicit in comparison to allowing optional sequences in for-in loops without making this explicit (see alternative 4 below).
 
 ### Objection to the trailing question mark in an isolated term
 
@@ -134,11 +134,15 @@ An existing API will not change.
 
 The following alternatives have been considered:
 
-### Alternative 1: Use `if let` to ensure a non-optional sequence
+### Alternative 1: Use `forEach` instead
+
+A for-in loop and `forEach` have different semantics, e.g. you might want to use a for-in loop to be able to stop the iteration. It should be possible to switch between those two loop options according to your needs without being “penalized” with a more complex formulation in one case.
+
+### Alternative 2: Use `if let` to ensure a non-optional sequence
 
 This has already been discussed above.
 
-### Alternative 2: Using empty sequences as a fallback
+### Alternative 3: Using empty sequences as a fallback
 
 This is another option without any change to the Swift language:
 
@@ -152,7 +156,7 @@ where `EmptyElementSequence()` is an appropriate empty sequence.
 
 This would have the drawback of having to introduce a sequence (the empty sequence) that we actually are not interested in, when all we want is that nothing happens if the optional sequence is `nil`.
 
-### Alternative 3: Allowing optional sequences in for-in loops without making it explicit
+### Alternative 4: Allowing optional sequences in for-in loops without making it explicit
 
 For any optional sequence `mySequence` one could allow:
 
@@ -162,7 +166,7 @@ for item in mySequence { … }
 
 Even if no “logical” arguments could be found against this option, such a solution would be at least controversial (see e.g. [this comment](https://forums.swift.org/t/still-or-again-interest-in-optional-iteration/65730/5)). The argument against it is that one would like to see if the sequence in the for-in loop is optional or not. With the solution in this proposal, one could always recognize the optionality of the sequence.
 
-### Alternative 4: Use `for?`
+### Alternative 5: Use `for?`
 
 This is the proposed solution from the rejected proposal [SE-0231](https://github.com/apple/swift-evolution/blob/main/proposals/0231-optional-iteration.md) and is only listed here for completeness (cf. [the rejection](https://forums.swift.org/t/rejected-se-0231-optional-iteration/17805)).
 
