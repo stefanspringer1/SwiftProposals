@@ -49,6 +49,12 @@ Note that there might be even more complex use cases, where the lack of the prop
 
 One might argue that optional chaining is not necessary here, because you _can_ use the according `if let` expressions — but note that the same argument could be used against optional chaining at some other places. So even if one does not see a big improvement for for-in loops, making the language feel more consistent (“We have this great feature of optional chaining, but why can’t I use it at this place?”) could be an argument in favour of the proposed language change (also see the discussion of alternative 2 below). So it could be seen less as new language feature _per se_ but as part of a “streamlining” of the language.
 
+Optionality is then always clear from a question mark in the sequence term. The example above has a `?`  in the chain, and e.g when the function call `giveMeAnOptionalSequence()`  returns an optional sequence and you would like to iterate through the sequence if it exists, you would have to write:
+
+```Swift
+for item in giveMeAnOptionalSequence()? { … }
+```
+
 From the rejected proposal [SE-0231](https://github.com/apple/swift-evolution/blob/main/proposals/0231-optional-iteration.md):
 
 >While usage of optional sequences is often treated as misconception, there are several common ways one could end up with an optional sequence through Standard Library APIs and language constructs themselves. Amongst the most prevalent are optional chaining and dictionary getters. An indentation-sensitive area of which optional arrays are an integral part is decoding and deserialization, i.e parsing a JSON response. Swift currently doesn't offer a mechanism for expressing optional iteration directly: optional sequences are illegal as a for-in loop argument. For a safe option, developers often resort to optional binding, which requires additional nesting ...
