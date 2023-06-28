@@ -198,6 +198,8 @@ for item in mySequence { … }
 
 Even if no “logical” arguments could be found against this option, such a solution would be at least controversial (see e.g. [this comment](https://forums.swift.org/t/still-or-again-interest-in-optional-iteration/65730/5)). The argument against it is that one would like to see if the sequence in the for-in loop is optional or not. With the solution in this proposal, one could always recognize the optionality of the sequence.
 
+(SwiftData adds an [according conformance](https://developer.apple.com/documentation/swift/optional/sequence-implementations).)
+
 ### Alternative 6: Use `for?`
 
 This is the proposed solution from the rejected proposal [SE-0231](https://github.com/apple/swift-evolution/blob/main/proposals/0231-optional-iteration.md) and is only listed here for completeness (cf. [the rejection](https://forums.swift.org/t/rejected-se-0231-optional-iteration/17805)).
