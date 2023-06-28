@@ -93,6 +93,8 @@ for element in myElement.children("status").first?.children { … }
 
 As already explained in the motivation section, this code is cleaner than the one that ensures a non-optional sequence by adding an `if let` statement: it is more easily understandable what the things are that we want to iterate through.
 
+At this point we answer possible objections againts the proposed solution. Another objection could be the existence of possible alternatives, see the section about the alternatives below.
+
 ### Objections from the rejection of proposal SE-0231
 
 The following objections are from the [rejection of proposal SE-0231](https://forums.swift.org/t/rejected-se-0231-optional-iteration/17805):
