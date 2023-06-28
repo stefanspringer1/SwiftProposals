@@ -140,7 +140,7 @@ This has already been discussed above.
 
 ### Alternative 2: Use `forEach` instead
 
-A for-in loop and `forEach` have different semantics, e.g. you might want to use a for-in loop to be able to stop the iteration. It should be possible to switch between those two loop options according to your needs without being “penalized” with a more complex formulation in one case.
+A for-in loop and `forEach` have different semantics, e.g. you might want to use a for-in loop to be able to stop the iteration (see the example in the motivation). It should be possible to switch between those two loop options according to your needs without being “penalized” with a more complex formulation in one case.
 
 ### Alternative 3: Using empty sequences as a fallback
 
