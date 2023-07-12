@@ -63,7 +63,7 @@ Optionality is then always clear from a question mark in the sequence term. The 
 for item in giveMeAnOptionalSequence()? { … }
 ```
 
-An argument in favour of the proposed change is that `forEach` loops are considered as bad practice by some people (see the discussion of alternative 2 below), and adding the proposed change to for-in loops makes it less `necessary` having to resort to `forEach` loops.
+An argument in favour of the proposed change is that `forEach` loops are considered as bad practice by some people (see the discussion of alternative 2 below), and adding the proposed change to for-in loops makes it less “necessary” having to resort to `forEach` loops.
 
 Some further arguments in comparison to the alternatives are given in the next section.
 
