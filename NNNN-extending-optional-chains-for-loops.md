@@ -93,6 +93,12 @@ for element in myElement.children("status").first?.children { … }
 
 As already explained in the motivation section, this code is cleaner than the one that ensures a non-optional sequence by adding an `if let` statement: it is more easily understandable what the things are that we want to iterate through.
 
+In comparison to the alternatives listed below, the described solution has certain advantages:
+
+- It follows existing practice of sugaring optional chaining with `?`.
+- It is very succinct while (arguably) clear given the existing language conventions.
+- It is also succinct if "chained" e.g. `for x in try? y`, compare to alternative 4 below.
+
 At this point we answer possible objections against the proposed solution. Another objection could be the existence of a suitable alternative, see the section about the alternatives further below.
 
 ### Objections from the rejection of proposal SE-0231
@@ -183,7 +189,9 @@ A variation of this alternative would be the following (cf. [this formums commen
 for element in myElement.children("status").first?.children ?? .empty { ... }
 ```
 
-This is more succint, but has the same disadvantage at its core. And in code that extensively uses optional chains for iterations, one would have to add many occurrences of `?? .empty` which could be seen as a burden that to some degree destroys the conciseness of the code.
+This is more succint, but has the same disadvantage at its core.
+
+And in code that extensively uses optional chains for iterations, one would have to add many occurrences of `?? .empty` which could be seen as a burden that to some degree destroys the conciseness of the code.
 
 ### Alternative 4: Add a property of the optional sequence to ensure the usage of a non-optional sequence
 
@@ -195,9 +203,18 @@ for element in myElement.children("status").first?.children.orEmpty {  }
 
 The new `orEmpty` property (one might want to choose a different name) of an optional sequence would give you the unwrapped sequence if the sequence exists, and else an approporiate empty sequence.
 
-We think that the question mark — despite being short — is better recognizable as a “warning” that we are kind of iterating through an optional sequence than “orEmpty”, which looks like some normal property. The question mark is what we are looking for to discover optional things so to speak.
+This has certain advantages:
 
-An argument in favour of this alternative could be that the language itself would not have to be changed, but only the according library. But this is still a change in the Swift distribution – we think that adding an according extension in your own library is not a good solution, because this way you stray from the usual path of how for-in loops are used.
+- It easily searchable.
+- It can be implemented in the library today without compiler magic.
+- It could be seen as (arguably) clearer.
+- It is discoverable via completion (tenuous, especially if the fixit idea is pursued).
+
+It is potentially less succinct if "chained" e.g. `for x in try? y` (using the proposed solution) does not require parens unlike `for x in (try? f()).orEmpty` which is pretty noisy.
+
+We think that the question mark — despite being short — is better recognizable as a “warning” that we are kind of iterating through an optional sequence than “orEmpty”, which looks like some normal property. The question mark is what we are looking for to discover optional things.
+
+Concerning the argument that the language itself would not have to be changed: This is still a change in the Swift distribution – we think that adding an according extension in your own library is not a good solution, because this way you stray from the usual path of how for-in loops are used.
 
 ### Alternative 5: Allowing optional sequences in for-in loops without making it explicit
 
@@ -220,3 +237,5 @@ This is the proposed solution from the rejected proposal [SE-0231](https://githu
 The title “Extending optional chains to include for loops” is taken from the [rejection of proposal SE-0231](https://forums.swift.org/t/rejected-se-0231-optional-iteration/17805).
 
 The discussion in the aforementioned [forums topic](https://forums.swift.org/t/still-or-again-interest-in-optional-iteration/65730) was very helpful.
+
+Some bullet points (regarding `for x in y?`, `for x in y.orEmpty`) were taken from [a forums comment by Ben Cohen](https://forums.swift.org/t/pitch-extending-optional-chains-to-include-for-loops/65848/15).
