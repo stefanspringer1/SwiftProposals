@@ -57,13 +57,15 @@ From this code is is less clear from a first quick view which the elements are t
 
 Note that there might be even more complex use cases, where the lack of the proposed solution would lead to even more nested `if let` and for-in loops. (The use case of complex XML querying and manipulation is a good example, as it demands concise formulations in order for the code to be still easily understandable.)
 
-One might argue that optional chaining is not necessary here, because you _can_ use the according `if let` expressions — but note that the same argument could be used against optional chaining at some other places. So even if one does not see a big improvement for for-in loops, making the language feel more consistent (“We have this great feature of optional chaining, but why can’t I use it at this place?”) could be an argument in favour of the proposed language change (also see the discussion of alternative 2 below). So it could be seen less as new language feature _per se_ but as part of a “streamlining” of the language.
-
 Optionality is then always clear from a question mark in the sequence term. The example above has a `?`  in the chain, and e.g when the function call `giveMeAnOptionalSequence()`  returns an optional sequence and you would like to iterate through the sequence if it exists, you would have to write:
 
 ```Swift
 for item in giveMeAnOptionalSequence()? { … }
 ```
+
+An argument in favour of the proposed change is that `forEach` loops are considered as bad practice by some people (see the discussion of alternative 2 below), and adding the proposed change to for-in loops makes it less `necessary` having to resort to `forEach` loops.
+
+Some further arguments in comparison to the alternatives are given in the next section.
 
 From the rejected proposal [SE-0231](https://github.com/apple/swift-evolution/blob/main/proposals/0231-optional-iteration.md):
 
@@ -98,6 +100,8 @@ In comparison to the alternatives listed below, the described solution has certa
 - It follows existing practice of sugaring optional chaining with `?`.
 - It is very succinct while (arguably) clear given the existing language conventions.
 - It is also succinct if "chained" e.g. `for x in try? y`, compare to alternative 4 below.
+
+One might argue that optional chaining is not necessary here, because you _can_ use the according `if let` expressions — but note that the same argument could be used against optional chaining at some other places. So even if one does not see a big improvement for for-in loops, making the language feel more consistent (“We have this great feature of optional chaining, but why can’t I use it at this place?”) could be an argument in favour of the proposed language change (also see the discussion of alternative 2 below). So it could be seen less as new language feature _per se_ but as part of a “streamlining” of the language.
 
 At this point we answer possible objections against the proposed solution. Another objection could be the existence of a suitable alternative, see the section about the alternatives further below.
 
