@@ -199,6 +199,8 @@ This is more succint (and also more uniform), but has the same disadvantage at i
 
 And in code that extensively uses optional chains for iterations, one would have to add many occurrences of `?? .empty` which could be seen as a burden that to some degree destroys the conciseness of the code.
 
+See [this forums comment](https://forums.swift.org/t/pitch-extending-optional-chains-to-include-for-loops/65848/28) for more objections against the `... ?? .empty` solution.
+
 ### Alternative 4: Add a property of the optional sequence to ensure the usage of a non-optional sequence
 
 This is a variation of alternative 3:
