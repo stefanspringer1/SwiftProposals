@@ -177,17 +177,25 @@ where `EmptyElementSequence()` is an appropriate empty sequence.
 
 This would have the drawback of having to introduce a sequence (the empty sequence) that we actually are not interested in, when all we want is that nothing happens if the optional sequence is `nil`.
 
+A variation of this alternative would be the following (cf. [this formums comment](https://forums.swift.org/t/pitch-extending-optional-chains-to-include-for-loops/65848/18)):
+
+```Swift
+for element in myElement.children("status").first?.children ?? .empty { ... }
+```
+
+This is more succint, but has the same disadvantage at its core. And in code that extensively uses optional chains for iterations, one would have to add many occurrences of `?? .empty` which could be seen as a burden that to some degree destroys the conciseness of the code.
+
 ### Alternative 4: Add a property of the optional sequence to ensure the usage of a non-optional sequence
 
 This is a variation of alternative 3:
 
 ```Swift
-for element in myElement.children("status").first?.children.sequence {  }
+for element in myElement.children("status").first?.children.orEmpty {  }
 ```
 
-The new `sequence` property (one might want to choose a different name) of an optional sequence would give you the unwrapped sequence if the sequence exists, and else an approporiate empty sequence.
+The new `orEmpty` property (one might want to choose a different name) of an optional sequence would give you the unwrapped sequence if the sequence exists, and else an approporiate empty sequence.
 
-We think that this does not feel as a natural expression of you intent (it feels like getting a sequence from a sequence, compare it when using it before `forEach`), and it dispenses with the described symmetry between the for-in loop and `forEach` – we believe this symmetry is a good thing. It is also not easy to discover as a feature; such an argument of discoverability [was part of the rejection of the `for?` solution](https://forums.swift.org/t/rejected-se-0231-optional-iteration/17805).
+We think that the question mark — despite being short — is better recognizable as a “warning” that we are kind of iterating through an optional sequence than “orEmpty”, which looks like some normal property. The question mark is what we are looking for to discover optional things so to speak.
 
 An argument in favour of this alternative could be that the language itself would not have to be changed, but only the according library. But this is still a change in the Swift distribution – we think that adding an according extension in your own library is not a good solution, because this way you stray from the usual path of how for-in loops are used.
 
