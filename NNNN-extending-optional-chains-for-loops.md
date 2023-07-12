@@ -214,7 +214,7 @@ This has certain advantages:
 - It could be seen as (arguably) clearer.
 - It is discoverable via completion (tenuous, especially if the fixit idea is pursued).
 
-It is potentially less succinct if "chained" e.g. `for x in try? y` (using the proposed solution) does not require parens unlike `for x in (try? f()).orEmpty` which is pretty noisy.
+It is potentially less succinct if “chained” e.g. `for x in try? y` (using the proposed solution) does not require parens unlike `for x in (try? f()).orEmpty` which is pretty noisy.
 
 We think that the question mark — despite being short — is better recognizable as a “warning” that we are kind of iterating through an optional sequence than “orEmpty”, which looks like some normal property. The question mark is what we are looking for to discover optional things.
 
