@@ -27,7 +27,7 @@ for x in optionalSequence? { ... }
 for x in optional?.sequence { ... }
 ```
 
-This means that when switching between the for-in loop and an application of `forEach`, this term would not have to be changed. Note that – as discussed below – using `forEach` might be considered as bad practice, so being able to change to for-in loops “without any hassle” should be considered a good thing.
+This means that when switching between the for-in loop and an application of `forEach`, this term would not have to be changed. Note that – as discussed below – using `forEach` might be considered as bad practice, so being able to switch from `forEach` to for-in loops “without any hassle” should be considered a good thing.
 
 The optionality is always clear from a question mark in the sequence term. While motivations described in the old, rejected proposal might still be valid, we try a fresh take in the motivation section below, as the proposed solution differs from the rejected one.
 
