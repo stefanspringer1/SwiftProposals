@@ -187,7 +187,7 @@ where `EmptyElementSequence()` is an appropriate empty sequence.
 
 This would have the drawback of having to introduce a sequence (the empty sequence) that we actually are not interested in, when all we want is that nothing happens if the optional sequence is `nil`.
 
-A variation of this alternative would be the following (cf. [this formums comment](https://forums.swift.org/t/pitch-extending-optional-chains-to-include-for-loops/65848/18)):
+A variation of this alternative would be the following (cf. [this forums comment](https://forums.swift.org/t/pitch-extending-optional-chains-to-include-for-loops/65848/18)):
 
 ```Swift
 for element in myElement.children("status").first?.children ?? .empty { ... }
