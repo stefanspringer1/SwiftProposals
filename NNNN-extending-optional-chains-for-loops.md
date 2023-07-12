@@ -173,7 +173,7 @@ This has already been discussed above.
 How the alternative of using `forEach` is seen depends on if one considers `forEach` as a sensible alternative to for-in loops:
 
 - If one does consider `forEach` as a sensible alternative to for-in loops: A for-in loop and `forEach` have different semantics, e.g. you might want to use a for-in loop to be able to stop the iteration (see the example in the motivation). It should then be possible to switch between those two loop options according to your needs without being “penalized” with a more complex formulation in one case.
-- One might argue that using `forEach` should be avoided (see e.g. [this forums comment](https://forums.swift.org/t/pitch-mutating-foreach/65950/10)). Then the for-in loop should not be less powerful than `forEach` regarding easy formulations when optional chains occur.
+- One might argue that using `forEach` should be avoided (see e.g. [this forums comment](https://forums.swift.org/t/pitch-mutating-foreach/65950/10)). Then _the for-in loop should not be less powerful than `forEach` regarding easy formulations when optional chains occur._
 
 ### Alternative 3: Using empty sequences as a fallback
 
