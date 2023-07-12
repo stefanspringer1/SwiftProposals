@@ -195,7 +195,7 @@ A variation of this alternative would be the following (cf. [this forums comment
 for element in myElement.children("status").first?.children ?? .empty { ... }
 ```
 
-This is more succint, but has the same disadvantage at its core.
+This is more succint (and also more uniform), but has the same disadvantage at its core.
 
 And in code that extensively uses optional chains for iterations, one would have to add many occurrences of `?? .empty` which could be seen as a burden that to some degree destroys the conciseness of the code.
 
