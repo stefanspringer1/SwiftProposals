@@ -207,6 +207,8 @@ This is a variation of alternative 3:
 for element in myElement.children("status").first?.children.orEmpty {  }
 ```
 
+(For an implemenation, cf. [this forums comment](https://forums.swift.org/t/pitch-extending-optional-chains-to-include-for-loops/65848/15).)
+
 The new `orEmpty` property (one might want to choose a different name) of an optional sequence would give you the unwrapped sequence if the sequence exists, and else an approporiate empty sequence.
 
 This has certain advantages:
