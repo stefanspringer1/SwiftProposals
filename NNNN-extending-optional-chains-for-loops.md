@@ -97,6 +97,14 @@ for element in myElement.children("status").first?.children { … }
 
 As already explained in the motivation section, this code is cleaner than the one that ensures a non-optional sequence by adding an `if let` statement: it is more easily understandable what the things are that we want to iterate through.
 
+Generally, a final question mark can be dispensed with if the optionalty is clear:
+
+```Swift
+for x in try? foo(param: 42) {
+    ...
+}
+```
+
 In comparison to the alternatives listed below, the described solution has certain advantages:
 
 - It follows existing practice of sugaring optional chaining with `?`.
