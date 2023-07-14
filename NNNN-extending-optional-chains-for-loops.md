@@ -101,7 +101,7 @@ In comparison to the alternatives listed below, the described solution has certa
 
 - It follows existing practice of sugaring optional chaining with `?`.
 - It is very succinct while (arguably) clear given the existing language conventions.
-- It is also succinct if “chained” e.g. `for x in try? y`, compare to alternative 4 below.
+- It is also succinct if “chained”, compare to alternative 4 below.
 
 One might argue that optional chaining is not necessary here, because you _can_ use the according `if let` expressions — but note that the same argument could be used against optional chaining at some other places. So even if one does not see a big improvement for for-in loops, making the language feel more consistent (“We have this great feature of optional chaining, but why can’t I use it at this place?”) could be an argument in favour of the proposed language change (also see the discussion of alternative 2 below). So it could be seen less as new language feature _per se_ but as part of a “streamlining” of the language.
 
