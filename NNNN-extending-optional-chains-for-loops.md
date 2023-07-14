@@ -97,14 +97,6 @@ for element in myElement.children("status").first?.children { … }
 
 As already explained in the motivation section, this code is cleaner than the one that ensures a non-optional sequence by adding an `if let` statement: it is more easily understandable what the things are that we want to iterate through.
 
-Generally, a final question mark can be dispensed with if the optionalty is clear:
-
-```Swift
-for x in try? foo(param: 42) {
-    ...
-}
-```
-
 In comparison to the alternatives listed below, the described solution has certain advantages:
 
 - It follows existing practice of sugaring optional chaining with `?`.
@@ -114,6 +106,16 @@ In comparison to the alternatives listed below, the described solution has certa
 One might argue that optional chaining is not necessary here, because you _can_ use the according `if let` expressions — but note that the same argument could be used against optional chaining at some other places. So even if one does not see a big improvement for for-in loops, making the language feel more consistent (“We have this great feature of optional chaining, but why can’t I use it at this place?”) could be an argument in favour of the proposed language change (also see the discussion of alternative 2 below). So it could be seen less as new language feature _per se_ but as part of a “streamlining” of the language.
 
 At this point we answer possible objections against the proposed solution. Another objection could be the existence of a suitable alternative, see the section about the alternatives further below.
+
+In addition, one might like to dispense with a final question mark can be dispensed with if the optionalty is clear:
+
+```Swift
+for x in try? foo(param: 42) {
+    ...
+}
+```
+
+This of course is not a must-have of the proposed solution and might be better treated as a separate topic.
 
 ### Objections from the rejection of proposal SE-0231
 
