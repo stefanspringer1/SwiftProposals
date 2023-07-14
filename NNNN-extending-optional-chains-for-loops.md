@@ -207,6 +207,8 @@ This is more succint (and also more uniform), but has the same disadvantage at i
 
 And in code that extensively uses optional chains for iterations, one would have to add many occurrences of `?? .empty` which could be seen as a burden that to some degree destroys the conciseness of the code.
 
+It is also not really what you want to express: You want “do not iterate if there is nothing to iterate through” and not “if there is nothing to iterate through, then please iterate through something empty”
+
 See [this forums comment](https://forums.swift.org/t/pitch-extending-optional-chains-to-include-for-loops/65848/28) for more objections against the `... ?? .empty` solution.
 
 ### Alternative 4: Add a property of the optional sequence to ensure the usage of a non-optional sequence
@@ -227,6 +229,8 @@ This has certain advantages:
 - It is discoverable via completion (tenuous, especially if the fixit idea is pursued).
 
 It is potentially less succinct if “chained” e.g. `for x in try? y` (using the proposed solution) does not require parens unlike `for x in (try? f()).orEmpty` which is pretty noisy.
+
+Also the the remark for alternative 3, that it is also not really what you want to express.
 
 We think that the question mark — despite being short — is better recognizable as a “warning” that we are kind of iterating through an optional sequence than “orEmpty”, which looks like some normal property. The question mark is what we are looking for to discover optional things.
 
