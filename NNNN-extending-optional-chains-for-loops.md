@@ -107,7 +107,7 @@ One might argue that optional chaining is not necessary here, because you _can_ 
 
 At this point we answer possible objections against the proposed solution. Another objection could be the existence of a suitable alternative, see the section about the alternatives further below.
 
-In addition, one might like to dispense with a final question mark can be dispensed with if the optionalty is clear:
+In addition, one might like to dispense with a final question mark if the optionality is clear:
 
 ```Swift
 for x in try? foo(param: 42) {
