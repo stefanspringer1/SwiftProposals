@@ -103,6 +103,8 @@ In comparison to the alternatives listed below, the described solution has certa
 - It is very succinct while (arguably) clear given the existing language conventions.
 - It is also succinct if “chained”, compare to alternative 4 below.
 
+(So the described solution could also be described as being a more “natural” one in comparison to some other solutions, in the sense that you _do not have to choose_ a name for a new property, but just use the already known `?` with its commonly understood semantics.)
+
 One might argue that optional chaining is not necessary here, because you _can_ use the according `if let` expressions — but note that the same argument could be used against optional chaining at some other places. So even if one does not see a big improvement for for-in loops, making the language feel more consistent (“We have this great feature of optional chaining, but why can’t I use it at this place?”) could be an argument in favour of the proposed language change (also see the discussion of alternative 2 below). So it could be seen less as new language feature _per se_ but as part of a “streamlining” of the language.
 
 In addition, one might like to dispense with a final question mark if the optionality is clear:
