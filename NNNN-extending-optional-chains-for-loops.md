@@ -211,7 +211,7 @@ And in code that extensively uses optional chains for iterations, one would have
 
 _It is also not really what you want to express:_ You want to express “do not iterate if there is nothing to iterate through” and not “if there is nothing to iterate through, then please iterate through something empty”. (So the argument, that one might need many other `foo ??  bar` formulations in a certain code base that have nothing to do with for-in loops and therefore it should be OK to also use them — repeately — in the described case of for-in loops, is not really a good argument: In the general case `bar` might be something you are really be _interested in as a value_ and not an empty thing just created as a means to actually do nothing. In the general case, there is not really a way of being more succint, whereas in the special case of for-loops with this alternative it feels like it _should_ be more succint because you might have to write the same, not so short `?? .empty` expression again and again.)
 
-Also not that having to create the empty sequence brings a performance penalty.
+Also note that having to create the empty sequence brings a performance penalty.
 
 See [this forums comment](https://forums.swift.org/t/pitch-extending-optional-chains-to-include-for-loops/65848/28) for more objections against the `... ?? .empty` solution.
 
