@@ -211,6 +211,8 @@ And in code that extensively uses optional chains for iterations, one would have
 
 _It is also not really what you want to express:_ You want to express “do not iterate if there is nothing to iterate through” and not “if there is nothing to iterate through, then please iterate through something empty”. (So the argument, that one might need many other `foo ??  bar` formulations in a certain code base that have nothing to do with for-in loops and therefore it should be OK to also use them — repeately — in the described case of for-in loops, is not really a good argument: In the general case `bar` might be something you are really be _interested in as a value_ and not an empty thing just created as a means to actually do nothing. In the general case, there is not really a way of being more succint, whereas in the special case of for-loops with this alternative it feels like it _should_ be more succint because you might have to write the same, not so short `?? .empty` expression again and again.)
 
+Also not that having to create the empty sequence brings a performance penalty.
+
 See [this forums comment](https://forums.swift.org/t/pitch-extending-optional-chains-to-include-for-loops/65848/28) for more objections against the `... ?? .empty` solution.
 
 ### Alternative 4: Add a property of the optional sequence to ensure the usage of a non-optional sequence
@@ -232,7 +234,7 @@ This has certain advantages:
 
 It is potentially less succinct if “chained” e.g. `for x in try? y` (using the proposed solution) does not require parens unlike `for x in (try? f()).orEmpty` which is pretty noisy.
 
-Also see the remark for alternative 3, that using an empty sequence instead _is not really what you want to express._
+Also see the remark for alternative 3, that using an empty sequence here _is not really what you want to express_ (you do not want to iterate through an empty sequence, you just _do not want to iterate._), and that having to create the empty sequence it also come with a performance penalty.
 
 We think that the question mark — despite being short — is better recognizable as a “warning” that we are kind of iterating through an optional sequence than “orEmpty”, which looks like some normal property. The question mark is what we are looking for to discover optional things.
 
