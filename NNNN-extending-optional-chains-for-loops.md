@@ -236,7 +236,7 @@ It is potentially less succinct if “chained” e.g. `for x in try? y` (using t
 
 Also see the remark for alternative 3, that using an empty sequence here _is not really what you want to express_ (you do not want to iterate through an empty sequence, you just _do not want to iterate_), and that having to create the empty sequence also come with a performance penalty.
 
-We think that the question mark — despite being short — is better recognizable as a “warning” that we are kind of iterating through an optional sequence than “orEmpty”, which looks like some normal property. The question mark is what we are looking for to discover optional things.
+We think that the question mark — despite being short — is better recognizable as a “warning” that we are kind of iterating through an optional sequence than “orEmpty”, which looks like some normal property. _The question mark is what we are looking for to discover optional things._
 
 Concerning the argument that the language itself would not have to be changed: This is still a change in the Swift distribution – we think that adding an according extension in your own library is not a good solution, because this way you stray from the usual path of how for-in loops are used.
 
