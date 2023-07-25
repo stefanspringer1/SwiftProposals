@@ -65,7 +65,7 @@ Optionality is then always clear from a question mark in the sequence term. The 
 for item in giveMeAnOptionalSequence()? { … }
 ```
 
-As already mentioned in the introduction, a strong argument in favour of the proposed change is that `forEach` loops might be considered as bad practice (see the discussion of alternative 2 below), and adding the proposed change to for-in loops makes it _unnecessary to have to resort to `forEach` loops for succinctness._ Another way to keep the succintness is to add an extension in your code such that you can also iterate though a `nil` sequence (Alternative 5 below), and such bringing a solution (to your code) that is even more controversial then the solution proposed here (see the discussion of Alternative 5).
+As already mentioned in the introduction, a strong argument in favour of the proposed change is that `forEach` loops might be considered as bad practice (see the discussion of alternative 2 below), and adding the proposed change to for-in loops makes it _unnecessary to have to resort to `forEach` loops for succinctness._ Another way to keep the succintness is to add an extension in your code such that you can also iterate though a `nil` sequence (Alternative 5 below), and such bringing a solution (to your code) that is even more controversial then the solution proposed here (see the discussion of Alternative 5). This proposal seems to be _the best compromise._
 
 Some further arguments in comparison to the alternatives are given in the next section.
 
