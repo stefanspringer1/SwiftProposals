@@ -244,13 +244,15 @@ Concerning the argument that the language itself would not have to be changed: T
 
 ### Alternative 5: Allowing optional sequences in for-in loops without making it explicit
 
-For any optional sequence `mySequence` one could allow:
+For any optional sequence `myOptionalSequence` one could allow:
 
 ```Swift
-for item in mySequence { … }
+for item in myOptionalSequence { … }
 ```
 
-Even if no “logical” arguments could be found against this option, such a solution would be at least controversial (see e.g. [this comment](https://forums.swift.org/t/still-or-again-interest-in-optional-iteration/65730/5)). The argument against it is that one would like to see if the sequence in the for-in loop is optional or not. With the solution in this proposal, one could always recognize the optionality of the sequence.
+A strong argument in favour of this solution is the following reasoning: Even if the sequence is non-optional, it could be empty, and an empty sequence is “not really” a difference to the sequence being `nil`.
+
+Even if no “logical” arguments could be found against this option, such a solution would be at least controversial (see e.g. [this comment](https://forums.swift.org/t/still-or-again-interest-in-optional-iteration/65730/5)). The argument against it is that one would like to see if the sequence in the for-in loop is optional or not, that it _is_ important whether a sequence is `nil` or empty. With the solution in this proposal, one could always recognize the optionality of the sequence.
 
 (SwiftData adds an [according conformance](https://developer.apple.com/documentation/swift/optional/sequence-implementations).)
 
