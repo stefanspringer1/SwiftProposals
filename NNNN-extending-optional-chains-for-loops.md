@@ -244,7 +244,7 @@ Concerning the argument that the language itself would not have to be changed: T
 
 ### Alternative 5: Allowing optional sequences in for-in loops without making it explicit
 
-For any optional sequence `myOptionalSequence` one could allow:
+For any optional sequence `myOptionalSequence` one could allow (cf. [the implementation](https://forums.swift.org/t/pitch-extending-optional-chains-to-include-for-loops/65848/37)):
 
 ```Swift
 for item in myOptionalSequence { … }
