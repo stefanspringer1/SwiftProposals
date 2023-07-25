@@ -254,7 +254,7 @@ A strong argument in favour of this solution is the following reasoning: Even if
 
 Even if no “logical” arguments could be found against this option, such a solution would be at least controversial (see e.g. [this comment](https://forums.swift.org/t/still-or-again-interest-in-optional-iteration/65730/5)). The argument against it is that one would like to see if the sequence in the for-in loop is optional or not, that it _is_ important whether a sequence is `nil` or empty. With the solution in this proposal, one could always recognize the optionality of the sequence.
 
-(SwiftData adds an [according conformance](https://developer.apple.com/documentation/swift/optional/sequence-implementations).)
+(Note that SwiftData adds an [according conformance](https://developer.apple.com/documentation/swift/optional/sequence-implementations).)
 
 ### Alternative 6: Use `for?`
 
